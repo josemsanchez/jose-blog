@@ -1,0 +1,71 @@
+site_name: Jose blog
+site_description: Dockerizable blog with MkDocs
+site_author: josemsanchez
+site_url: https://josemsanchez.github.io
+dev_addr: 127.0.0.1:8000
+
+repo_name: 'GitHub'
+repo_url: 'https://github.com/josemsanchez.github.io/jose-blog'
+
+docs_dir: 'docs'
+edit_uri: 'edit/source/docs/content/'
+
+# https://squidfunk.github.io/mkdocs-material/
+theme:
+  name: 'mkdocs'
+  custom_dir: '.'
+  language: en
+  include_sidebar: true
+  #favicon: assets/img/icon.png
+  #logo: assets/img/logo.png
+  feature:
+    tabs: false
+  palette:
+    primary: 'cyan'
+    accent: 'cyan'
+  i18n:
+    prev: 'Previous'
+    next: 'Next'
+
+copyright: "Copyright &copy; 2021 Jose Sanchez"
+
+extra_css:
+  - assets/styles/extra.css
+  - assets/styles/atom-one-light.css
+
+extra_javascript:
+  - assets/js/hljs/highlight.pack.js
+  - assets/js/extra.js
+
+plugins:
+  - search
+  - exclude:
+      glob:
+        - "**/include-*.md"
+
+# https://squidfunk.github.io/mkdocs-material/extensions/admonition/
+# https://facelessuser.github.io/pymdown-extensions/
+markdown_extensions:
+  - attr_list
+  - admonition
+  - footnotes
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.highlight:
+      use_pygments: false
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist
+  - pymdownx.snippets:
+      check_paths: true
+  - toc:
+      permalink: true
+
+# Page tree
+nav:
+  - 'Welcome': 'index.md'
+  - 'Blog Posts':
+      - 'Post 1' : 'posts/Post1.md'
+      - 'Post 2' : 'posts/Post2.md'
+      - 'Post 3' : 'posts/Post3.md'
+      - 'Post 4': 'posts/Post4.md'
